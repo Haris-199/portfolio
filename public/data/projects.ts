@@ -8,7 +8,7 @@ export type Project = {
   images: string[] | null;
 };
 
-export const projects: Project[] = [
+const _projects: Project[] = [
   {
     title: 'NeoDrive',
     description: 'Cloud Storage Platform',
@@ -46,3 +46,5 @@ export const projects: Project[] = [
     images: ['../../src/assets/NeoDrive.png'],
   },
 ];
+
+export const projects: Project[] = JSON.parse(JSON.stringify(_projects));
