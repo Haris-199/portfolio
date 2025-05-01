@@ -1,7 +1,6 @@
 import { ThemeProvider } from "styled-components";
-import Intro from "./components/Intro";
 import Header from "./components/Header";
-import Projects from "./components/Projects";
+import { Outlet } from "react-router-dom";
 import "./global.css";
 
 const theme = {
@@ -18,8 +17,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Intro />
-        <Projects />
+        <Outlet />
       </ThemeProvider>
     </>
   );

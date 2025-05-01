@@ -24,7 +24,7 @@ export default function Projects() {
     <>
       <Div>
         <h2>Projects</h2>
-        <div className="projects">
+        <div className='projects'>
           {projects.map((proj) => (
             <ProjectCard key={proj.title} project={proj} />
           ))}
