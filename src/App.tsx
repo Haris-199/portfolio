@@ -1,13 +1,26 @@
-import { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import Intro from "./components/Intro";
+import Header from "./components/Header";
+import Projects from "./components/Projects";
+import "./global.css";
+
+const theme = {
+  black: "#000000",
+  blue: "#14213D",
+  orange: "#FCA311",
+  grey: "#E5E5E5", 
+  shadow: "#A5A5A5", 
+  white: "#FFFFFF",
+};
 
 export default function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Intro />
+        <Projects />
+      </ThemeProvider>
     </>
   );
 }
