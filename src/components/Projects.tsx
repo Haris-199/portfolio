@@ -3,19 +3,17 @@ import ProjectCard from './ProjectCard';
 import { projects } from '../../public/data/projects';
 
 const Div = styled.div`
-  background-color: ${(props) => props.theme.grey};
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 1px 5px 1px ${(props) => props.theme.shadow};
   padding: 1rem;
 
-  & .projects {
+  .projects {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     padding: 1rem;
-    gap: 1rem;
+    gap: 2.25rem;
   }
 `;
 

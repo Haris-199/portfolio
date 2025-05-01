@@ -1,27 +1,132 @@
 import { Project } from '../../public/data/projects';
 import { styled } from 'styled-components';
-
-const ImageDiv = styled.div`
-  display: grid;
-  place-items: center;
-  & img {
-    width: 80%;
-  }
-`;
+import { ExternalLink } from 'lucide-react';
 
 const Div = styled.div`
   background-color: ${(props) => props.theme.white};
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   align-items: center;
   box-shadow: 0px 1px 5px 1px ${(props) => props.theme.shadow};
-  border: 1px solid black;
   border-radius: 1rem;
   padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px 2px ${(props) => props.theme.shadow};
+  }
+
+  .category {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .titles-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    width: 80%;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid grey;
+  }
   
-  & h3 {
-    padding-bottom: 0.75rem;
+  .title {
+    font-size: 1.75rem;
     font-weight: bold;
+  }
+  
+  .subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-size: 1rem;
+  }
+
+  .description {
+    line-height: 1.5;
+    padding: 0 0.5rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.75rem;
+
+    .titles-div {
+      width: 100%;
+    }
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
+    }
+  }
+`;
+
+const ImageDiv = styled.div`
+  display: grid;
+  place-items: center;
+  img {
+    width: 100%;
+  }
+`;
+
+const LinksDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  
+
+  a {
+    text-decoration: none;
+    background-color: ${(props) => props.theme.blue};
+    color: ${(props) => props.theme.white};
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+
+
+    &:hover {
+      scale: 1.015;
+      box-shadow: 0px 4px 10px 2px ${(props) => props.theme.shadow};
+    }
+  }
+`;
+
+const CategoriesDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+
+  .category {
+    background-color: ${(props) => props.theme.orange};
+    color: ${(props) => props.theme.white};
+    padding: 0.5rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 `;
 
@@ -32,11 +137,35 @@ type ProjectCardProps = {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Div>
-      <h3>{project.title}</h3>
+      <div className='titles-div'>
+        <h3 className='title'>{project.title}</h3>
+        <p className='subtitle'>{project.subtitle}</p>
+      </div>
       <ImageDiv>
         {project.images && <img src={project.images[0]}></img>}
       </ImageDiv>
-      {project.points}
+      <p className='description'>{project.description}</p>
+      <LinksDiv>
+        {project.repo && (
+          <a href={project.repo} target="_blank" rel="noopener noreferrer">
+              <p>See Repo</p>
+              <ExternalLink />
+          </a>
+        )}
+        {project.link && (
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+              <p>See Live</p>
+              <ExternalLink />
+          </a>
+        )}
+      </LinksDiv>
+      <CategoriesDiv>
+        {project.categories.map((category) => (
+          <span key={category} className="category">
+            {category}
+          </span>
+        ))}
+      </CategoriesDiv>
     </Div>
   );
 }

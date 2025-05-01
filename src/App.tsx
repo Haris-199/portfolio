@@ -5,7 +5,7 @@ import "./global.css";
 
 const theme = {
   black: "#000000",
-  blue: "#14213D",
+  blue: "#1b4fc0",
   orange: "#FCA311",
   grey: "#E5E5E5", 
   shadow: "#A5A5A5", 
