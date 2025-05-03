@@ -3,25 +3,19 @@ import { styled } from 'styled-components';
 import { ExternalLink } from 'lucide-react';
 
 const Div = styled.div`
-  background-color: ${(props) => props.theme.white};
+  background-color: ${(props) => props.theme.foreground};
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   align-items: center;
-  box-shadow: 0px 1px 5px 1px ${(props) => props.theme.shadow};
+  gap: 1rem;
+  color: ${(props) => props.theme.text};
   border-radius: 1rem;
   padding: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 4px 10px 2px ${(props) => props.theme.shadow};
-  }
-
-  .category {
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    scale: 1.01;
   }
 
   .titles-div {
@@ -85,7 +79,6 @@ const LinksDiv = styled.div`
   display: flex;
   justify-content: center;
   gap: 1rem;
-  
 
   a {
     text-decoration: none;
@@ -101,7 +94,6 @@ const LinksDiv = styled.div`
     gap: 0.5rem;
     transition: all 0.3s ease;
 
-
     &:hover {
       scale: 1.015;
       box-shadow: 0px 4px 10px 2px ${(props) => props.theme.shadow};
@@ -116,16 +108,18 @@ const CategoriesDiv = styled.div`
   gap: 0.25rem;
 
   .category {
-    background-color: ${(props) => props.theme.orange};
-    color: ${(props) => props.theme.white};
+    background-color: ${(props) => props.theme.secondary};
     padding: 0.5rem 0.75rem;
     border-radius: 1rem;
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     transition: all 0.3s ease;
 
     &:hover {
-      opacity: 0.7;
+      scale: 1.04;
     }
   }
 `;

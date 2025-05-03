@@ -10,7 +10,7 @@
 body {
   font-family: Helvetica, system-ui, "Segoe UI", Roboto, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   height: 100dvh;
-  background-color: #F5F5F5;
+  background-color: black;
 }
 
 article, aside, details, figcaption, figure,

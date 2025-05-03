@@ -10,6 +10,12 @@ const theme = {
   grey: "#E5E5E5", 
   shadow: "#A5A5A5", 
   white: "#FFFFFF",
+
+  text: "#FFF",
+  background: "#000000",
+  foreground: "#202020",
+  primary: "#1b4fc0",
+  secondary: "#e4920e",
 };
 
 export default function App() {
