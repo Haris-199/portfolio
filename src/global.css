@@ -10,12 +10,12 @@
 body {
   font-family: Helvetica, system-ui, "Segoe UI", Roboto, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   height: 100dvh;
-  background-color: black;
+  background-color: #000;
 }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section { 
-  display:block;
+  display: block;
 }
 
 input, button, textarea, select {

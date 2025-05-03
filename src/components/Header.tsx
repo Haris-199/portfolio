@@ -2,10 +2,8 @@ import { styled } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const Head = styled.header`
-  background-image: linear-gradient(75deg, #203e7d, #2150b6);
-
+  background: #222;
   padding: 1rem;
-  box-shadow: 0px 1px 5px black;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -13,26 +11,102 @@ const Head = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  .logo {
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  &::after, &::before {
+    box-sizing: content-box;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    padding-bottom: 1px;
+    animation: spin 8s linear infinite;
+    background-image: repeating-conic-gradient(from var(--angle), #c760ca 0%, #2c6acf 15%, #c760ca 33%);
+    z-index: -2;
+  }
+  &::before {
+    padding-bottom: 4px;
+    margin-top: -1px;
+    filter: blur(10px);
+    opacity: 0.75;
+  }
+  @keyframes spin {
+    from {
+      --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+  h1 {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2.7rem;
     font-weight: 700;
     color: ${(props) => props.theme.white};
-    text-shadow: 1px 1px 4px ${(props) => props.theme.black};
-  }
 
+    &::before {
+      cursor: default;
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 50%;
+      top: 49%;
+      translate: -50% -50%;
+      background-image: linear-gradient(15deg, #000, #031e4b, #3e0d3f);
+      z-index: -1;
+    }
+  }
+  
   ul {
     list-style: none;
     display: flex;
     gap: 2rem;
   }
 
-  .active {
+  .name.active {
+    pointer-events: none;
+  }
+
+  .active:not(.name) {
     text-decoration: underline;
     cursor: default;
     pointer-events: none;
-    background-color: #2b5ac1;
-    border: solid 2px #0c3ea9;
+    background-color: #222;
+    position: relative;
+
+    &::before {
+      box-sizing: content-box;
+      content: '';
+      position: absolute;
+      border-radius: 6px;
+      height: 100%;
+      width: 100%;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      padding: 3.5px 4px;
+      background-image: linear-gradient(to right, #2c6acf, #c760ca);
+      z-index: -1;
+      animation: fade-in-out 1s ease-in-out infinite alternate;
+      box-shadow: 
+        0px 1px 40px 1px rgba(44, 106, 207, 0.4),
+        0px 1px 40px 1px rgba(198, 96, 202, 0.4);
+    }
+
+    @keyframes fade-in-out {
+      to {
+        opacity: 0.55;
+      }
+    }
   }
 
   a {
@@ -42,28 +116,47 @@ const Head = styled.header`
     color: ${(props) => props.theme.white};
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: all 0.2s ease-in-out;
     border: solid 2px transparent;
 
     &:hover {
-      background-color: #2b5ac1;
-      border: solid 2px #0c3ea9;
+      background-color: #222;
       color: ${(props) => props.theme.white};
     }
+
+    &:active {
+      transform: scale(0.95);
+      box-shadow:
+        0px 1px 40px 1px rgba(195, 208, 229, 0.4),
+        0px 1px 40px 1px rgba(198, 96, 202, 0.4);
+      background-image: linear-gradient(to right,#031e4b, #3e0d3f);
+      background-repeat: no-repeat;
+    }
+  }
+  
+  @media (min-width: 1300px) {
+    padding: 1rem 5%;
+  }
+
+  @media (min-width: 2100px) {
+    padding: 1rem 20%;
+  }
+
+  @media (max-width: 620px) {
+    /* TODO popup for nav */
   }
 `;
 
 export default function Header() {
   return (
     <Head>
-      <div className='logo'>
+      <NavLink to='/' className='name'>
         <h1>Haris Siddiqui</h1>
-      </div>
+      </NavLink>
       <nav>
         <ul>
           <NavLink to='/'>Home</NavLink>
           <NavLink to='/projects'>Projects</NavLink>
-          <NavLink to='501'>Contact</NavLink>
+          <NavLink to='/501'>Contact</NavLink>
         </ul>
       </nav>
     </Head>
