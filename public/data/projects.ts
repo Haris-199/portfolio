@@ -16,7 +16,7 @@ const _projects: Project[] = [
     categories: ['JavaScript', 'Node.js', 'Express.js', 'PostgreSQL'],
     link: "https://neodrive-production.up.railway.app/",
     repo: "https://github.com/Haris-199/file-uploader/",
-    images: ['../../src/assets/NeoDrive.png'],
+    images: ['../../src/assets/projects/NeoDrive.png'],
   },
   {
     title: 'NeoDrive',
@@ -25,7 +25,7 @@ const _projects: Project[] = [
     categories: ['JavaScript', 'Node.js', 'Express.js', 'PostgreSQL'],
     link: "https://neodrive-production.up.railway.app/",
     repo: null,
-    images: ['../../src/assets/NeoDrive.png'],
+    images: ['../../src/assets/projects/NeoDrive.png'],
   },
   {
     title: 'NeoDrive',
@@ -34,7 +34,7 @@ const _projects: Project[] = [
     categories: ['JavaScript'],
     link: "https://neodrive-production.up.railway.app/",
     repo: null,
-    images: ['../../src/assets/NeoDrive.png'],
+    images: ['../../src/assets/projects/NeoDrive.png'],
   },
   {
     title: 'NeoDrive',
@@ -43,7 +43,7 @@ const _projects: Project[] = [
     categories: ['Node.js', 'Express.js', 'PostgreSQL'],
     link: "https://neodrive-production.up.railway.app/",
     repo: null,
-    images: ['../../src/assets/NeoDrive.png'],
+    images: ['../../src/assets/projects/NeoDrive.png'],
   },
 ];
 
