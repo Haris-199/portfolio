@@ -1,6 +1,7 @@
 import { styled, ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import { Outlet } from "react-router-dom";
+import Footer from "./components/Footer";
 import "./global.css";
 
 const theme = {
@@ -21,11 +22,11 @@ const theme = {
 const Layout = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;
   background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
   
-  & > :last-child {
+  & > :nth-child(2) {
     flex-grow: 1;
     
     @media (min-width: 1300px) {
@@ -45,6 +46,7 @@ export default function App() {
         <Layout>
           <Header />
           <Outlet />
+          <Footer />
         </Layout>
       </ThemeProvider>
     </>
