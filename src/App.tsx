@@ -23,10 +23,11 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.text};
   
   & > :nth-child(2) {
+    margin-block: 2rem;
+    background-color: ${(props) => props.theme.background};
     flex-grow: 1;
     
     @media (min-width: 1300px) {
