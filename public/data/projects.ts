@@ -13,13 +13,13 @@ const _projects: Project[] = [
     title: 'NeoDrive',
     subtitle: 'Cloud Storage Platform',
     description: 'NeoDrive is a cloud storage platform similar to Google Drive that allows users to upload and store files securely. It features user authentication, file management, and a responsive design.',
-    categories: ['JavaScript', 'Node.js', 'Express.js', 'PostgreSQL'],
+    categories: ['Node.js', 'Express.js', 'PostgreSQL'],
     link: "https://neodrive-production.up.railway.app/",
     repo: "https://github.com/Haris-199/file-uploader/",
     images: ['../../src/assets/projects/NeoDrive.png'],
   },
   {
-    title: 'NeoDrive',
+    title: 'NeoDrives',
     subtitle: 'Cloud Storage Platform',
     description: 'NeoDrive is a cloud storage platform that allows users to upload and store files securely. It features user authentication, file management, and a responsive design.',
     categories: ['JavaScript', 'Node.js', 'Express.js', 'PostgreSQL'],
@@ -28,7 +28,7 @@ const _projects: Project[] = [
     images: ['../../src/assets/projects/NeoDrive.png'],
   },
   {
-    title: 'NeoDrive',
+    title: 'NeoDrivae',
     subtitle: 'Cloud Storage Platform',
     description: 'NeoDrive is a cloud storage platform that allows users to upload and store files securely. It features user authentication, file management, and a responsive design.',
     categories: ['JavaScript'],
@@ -37,7 +37,7 @@ const _projects: Project[] = [
     images: ['../../src/assets/projects/NeoDrive.png'],
   },
   {
-    title: 'NeoDrive',
+    title: 'NeoDrifve',
     subtitle: 'Cloud Storage Platform',
     description: 'NeoDrive',
     categories: ['Node.js', 'Express.js', 'PostgreSQL'],

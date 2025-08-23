@@ -7,22 +7,27 @@ const Div = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1rem;
+`;
 
-  .projects {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    padding: 1rem;
-    gap: 2.25rem;
-  }
+const P = styled.p`
+  color: ${(props) => props.theme.text};
+  font-size: 1.15rem;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  font-weight: 500;
 `;
 
 export default function Projects() {
   return (
     <>
       <Div>
-        <h2>Projects</h2>
-        <div className='projects'>
+        <P>
+          Explore a selection of my recent projects, showcasing my skills in programming and problem-solving.
+        </P>
+        <div className="projects">
           {projects.map((proj) => (
             <ProjectCard key={proj.title} project={proj} />
           ))}

@@ -3,13 +3,10 @@ import { styled } from 'styled-components';
 import { ExternalLink } from 'lucide-react';
 
 const Div = styled.div`
-  background-color: ${(props) => props.theme.foreground};
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  color: ${(props) => props.theme.text};
-  border-radius: 1rem;
   padding: 1rem;
   transition: all 0.3s ease, box-shadow 0.3s ease;
 
@@ -27,12 +24,12 @@ const Div = styled.div`
     padding-bottom: 0.5rem;
     border-bottom: 2px solid grey;
   }
-  
+
   .title {
     font-size: 1.75rem;
     font-weight: bold;
   }
-  
+
   .subtitle {
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
@@ -40,6 +37,8 @@ const Div = styled.div`
   }
 
   .description {
+  letter-spacing: 0.01em;
+
     line-height: 1.5;
     padding: 0 0.5rem;
     font-family: 'Open Sans', sans-serif;
@@ -78,25 +77,33 @@ const ImageDiv = styled.div`
 const LinksDiv = styled.div`
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.75rem;
 
   a {
     text-decoration: none;
-    background-color: ${(props) => props.theme.blue};
+    font-size: 1rem;
+    background-color: ${(props) => props.theme.primary};
     color: ${(props) => props.theme.white};
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
-    display: flex;
+
+    display: grid;
+    grid-template-columns: max-content auto;
+
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
 
     &:hover {
       scale: 1.015;
-      box-shadow: 0px 4px 10px 2px ${(props) => props.theme.shadow};
+    }
+
+    @media (max-width: 768px) {
+      font-size: 0.79rem;
+    padding: 0.3rem 0.5rem;
+
     }
   }
 `;
@@ -108,7 +115,7 @@ const CategoriesDiv = styled.div`
   gap: 0.25rem;
 
   .category {
-    background-color: ${(props) => props.theme.secondary};
+    background-color: #c760cab5;
     padding: 0.5rem 0.75rem;
     border-radius: 1rem;
     font-family: 'Montserrat', sans-serif;
@@ -121,35 +128,32 @@ const CategoriesDiv = styled.div`
     &:hover {
       scale: 1.04;
     }
+    @media (max-width: 768px) {
+    font-size: 0.65rem;
+  }
   }
 `;
 
-type ProjectCardProps = {
-  project: Project;
-};
-
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Div>
-      <div className='titles-div'>
-        <h3 className='title'>{project.title}</h3>
-        <p className='subtitle'>{project.subtitle}</p>
+    <Div className="glass-effect">
+      <div className="titles-div">
+        <h3 className="title">{project.title}</h3>
+        <p className="subtitle">{project.subtitle}</p>
       </div>
-      <ImageDiv>
-        {project.images && <img src={project.images[0]}></img>}
-      </ImageDiv>
-      <p className='description'>{project.description}</p>
+      <ImageDiv>{project.images && <img src={project.images[0]}></img>}</ImageDiv>
+      <p className="description">{project.description}</p>
       <LinksDiv>
         {project.repo && (
           <a href={project.repo} target="_blank" rel="noopener noreferrer">
-              <p>See Repo</p>
-              <ExternalLink />
+            <p>See Repo</p>
+            <ExternalLink />
           </a>
         )}
         {project.link && (
           <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <p>See Live</p>
-              <ExternalLink />
+            <p>See Live</p>
+            <ExternalLink />
           </a>
         )}
       </LinksDiv>
