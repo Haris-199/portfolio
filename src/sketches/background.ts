@@ -13,7 +13,6 @@ const background = (p: p5) => {
   const parts: Particle[] = [];
   let n: number;
   let velMag: number;
-  let weight: number;
   let iterations: number;
 
   p.setup = () => {
@@ -22,10 +21,16 @@ const background = (p: p5) => {
     c.style('z-index', '-1000');
     c.style('filter', 'blur(3px)');
 
-    velMag = p.map(p.width, 300, 2000, 0.12, 0.71);
-    weight = p.map(p.width, 300, 2000, 1, 1.75);
-    iterations = p.round(p.map(p.width, 300, 2000, 5, 15));
-    n = p.round(p.map(p.width, 300, 2000, 50, 150));
+    velMag = p.map(p.width, 300, 2000, 0.5, 0.71);
+    iterations = p.round(p.map(p.width, 300, 2000, 10, 15));
+
+    if (p.width > 1500) {
+      n = 150;
+    } else if (p.width > 1000) {
+      n = 100;
+    } else {
+      n = 50;
+    }
 
     for (let i = 0; i < n; i++) {
       const pos = p.createVector(p.random(p.width), p.random(p.height));
@@ -34,14 +39,15 @@ const background = (p: p5) => {
         col: weightedRandom(
           [
             [255, 10, 120, 30],
-            [0, 100, 150, 45],
-            [0, 0, 0],
+            [0, 100, 150, 52],
+            [0, 0, 0, 200],
           ],
           [0.325, 0.325, 0.35]
         ),
       });
     }
 
+    p.strokeWeight(1.75);
     p.frameRate(20);
     p.background(0);
   };
@@ -56,7 +62,6 @@ const background = (p: p5) => {
 
         edge(part.pos);
         p.stroke(...part.col);
-        p.strokeWeight(weight);
         p.point(x, y);
 
         const a = p.noise(x * inc, y * inc, zoff) * p.TWO_PI * 4;
@@ -66,7 +71,6 @@ const background = (p: p5) => {
 
       zoff += inc;
     }
-    p.stroke(255);
   };
 
   function edge(pos: p5.Vector) {

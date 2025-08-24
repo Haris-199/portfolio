@@ -17,7 +17,7 @@ const trail = (p: p5) => {
 
   p.setup = () => {
     const c = p.createCanvas(p.windowWidth, p.windowHeight);
-    
+
     if (p.width < 800) c.remove();
     
     c.position(0, 0, 'fixed');
