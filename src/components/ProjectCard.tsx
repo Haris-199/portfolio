@@ -37,8 +37,6 @@ const Div = styled.div`
   }
 
   .description {
-  letter-spacing: 0.01em;
-
     line-height: 1.5;
     padding: 0 0.5rem;
     font-family: 'Open Sans', sans-serif;
