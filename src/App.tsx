@@ -6,6 +6,7 @@ import './global.css';
 import { useRef } from 'react';
 import useP5Sketch from './hooks/useP5Sketch';
 import background from './sketches/background';
+import trail from './sketches/trail';
 
 const theme = {
   black: '#000000',
@@ -46,7 +47,8 @@ const Layout = styled.div`
 export default function App() {
   const ref = useRef<HTMLDivElement>(null);
   useP5Sketch(background, ref);
-
+  useP5Sketch(trail);
+  
   return (
     <>
       <ThemeProvider theme={theme}>
