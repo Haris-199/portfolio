@@ -10,7 +10,6 @@ const Div = styled.div`
 `;
 
 const P = styled.p`
-  color: ${(props) => props.theme.text};
   font-size: 1.15rem;
   max-width: 600px;
   text-align: center;
