@@ -111,11 +111,10 @@ const HeroContainer = styled.section`
     align-items: center;
 
     img {
-      width: 100%;
-      max-width: 380px;
+      max-width: 350px;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 30px 10px 30px 10px; 
+      border-radius: 2rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       border: 2px solid rgba(255, 255, 255, 0.1);
     }
@@ -164,7 +163,7 @@ export default function Hero() {
       </div>
 
       <div className="picture">
-        <img src="../src/assets/profile.jpg" alt="Haris Siddiqui" />
+        <img src="../src/assets/profile.webp" alt="Haris Siddiqui" />
       </div>
     </HeroContainer>
   );
