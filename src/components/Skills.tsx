@@ -5,14 +5,14 @@ const Section = styled.section`
   align-items: center;
   flex-direction: column;
   & > h3 {
-    font-size: 1.15rem;
-    max-width: 600px;
-    text-align: center;
-    line-height: 1.6;
-    letter-spacing: 0.01em;
-    font-weight: 500;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #2c6acf; 
+    padding-bottom: 2rem;
   }
-  padding-block: 3rem;
+  padding-bottom: 3rem;
 `;
 
 const Categories = styled.div`
@@ -97,7 +97,7 @@ export default function Skills() {
 
   return (
     <Section>
-      <h3>I have experience in a variety of programming languages and frameworks, including:</h3>
+      <h3>Skills</h3>
       <Categories>
         <Category className="glass-effect">
           <div>

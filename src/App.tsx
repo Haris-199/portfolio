@@ -11,6 +11,7 @@ import trail from './sketches/trail';
 const theme = {
   black: '#000000',
   blue: '#1b4fc0',
+  lightblue: '#189ac5',
   orange: '#FCA311',
   grey: '#E5E5E5',
   pink: '#C760CA',
@@ -28,10 +29,10 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
+  /* background-color: ${(props) => props.theme.background}; */
   color: ${(props) => props.theme.text};
 
   & > :nth-child(2) {
-    margin-block: 2rem;
     flex-grow: 1;
 
     @media (min-width: 1300px) {
@@ -47,8 +48,8 @@ const Layout = styled.div`
 export default function App() {
   const ref = useRef<HTMLDivElement>(null);
   useP5Sketch(background, ref);
-  useP5Sketch(trail);
-  
+  // useP5Sketch(trail);
+
   return (
     <>
       <ThemeProvider theme={theme}>
