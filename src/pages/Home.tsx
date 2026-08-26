@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
-import Skills from './Skills';
-import Hero from './Hero';
-import ProjectCard from './ProjectCard';
+import Skills from '../components/Skills';
+import Hero from '../components/Hero';
+import ProjectCard from '../components/ProjectCard';
 import { projects } from '../../public/data/projects';
-import Divider from './Divider';
+import Divider from '../components/Divider';
 
 const MainContainer = styled.div`
   display: flex;
