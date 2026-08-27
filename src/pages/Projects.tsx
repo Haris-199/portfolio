@@ -2,36 +2,41 @@ import { styled } from 'styled-components';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../../public/data/projects';
 
-const Div = styled.div`
+const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 4rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
 `;
 
-const P = styled.p`
-  font-size: 1.15rem;
-  max-width: 600px;
-  text-align: center;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  letter-spacing: 0.01em;
-  font-weight: 500;
+const Title = styled.h3`
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #2c6acf; 
+  padding-bottom: 2rem;
+`;
+
+const ProjectsDiv = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  padding: 1rem;
+  gap: 2rem;
 `;
 
 export default function Projects() {
   return (
-    <>
-      <Div>
-        <P>
-          Explore a selection of my recent projects, showcasing my skills in programming and problem-solving.
-        </P>
-        <div className="projects">
-          {projects.map((proj) => (
-            <ProjectCard key={proj.title} project={proj} />
-          ))}
-        </div>
-      </Div>
-    </>
+    <PageContainer>
+      <Title>My Projects</Title>
+      <ProjectsDiv>
+        {projects.map((proj) => (
+          <ProjectCard key={proj.id} project={proj} />
+        ))}
+      </ProjectsDiv>
+    </PageContainer>
   );
 }

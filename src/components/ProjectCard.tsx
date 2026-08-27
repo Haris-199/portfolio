@@ -11,7 +11,6 @@ const Div = styled.div`
   transition: all 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
     scale: 1.01;
   }
 
@@ -113,22 +112,24 @@ const CategoriesDiv = styled.div`
   gap: 0.25rem;
 
   .category {
-    background-color: #c760cab5;
-    padding: 0.5rem 0.75rem;
-    border-radius: 1rem;
+    background-color: rgba(199, 96, 202, 0.2);
+    border: 1px solid rgba(199, 96, 202, 0.4);
+    color: ${(props) => props.theme.text || 'white'};
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: all 0.3s ease;
-
+  
     &:hover {
       scale: 1.04;
     }
     @media (max-width: 768px) {
-    font-size: 0.65rem;
-  }
+      font-size: 0.65rem;
+    }
   }
 `;
 
