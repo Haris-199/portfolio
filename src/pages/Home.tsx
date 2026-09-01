@@ -17,11 +17,17 @@ const MainContainer = styled.div`
 `;
 
 const FeaturedSection = styled.section`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    padding: 1rem;
+    gap: 2rem;
+  }
 
   .view-all {
     padding: 0.85rem 2.5rem;
@@ -31,7 +37,7 @@ const FeaturedSection = styled.section`
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 700;
-    transition: all 0.2s ease, background-color 0.2s ease;
+    transition: all 0.2s ease;
 
     &:hover {
       transform: scale(1.02);
