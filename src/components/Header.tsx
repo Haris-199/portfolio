@@ -157,7 +157,7 @@ export default function Header() {
           <NavLink to='/'>Home</NavLink>
           <NavLink to='/projects'>Projects</NavLink>
           <NavLink to='/about'>About</NavLink>
-          <NavLink to='/501'>Contact</NavLink>
+          <NavLink to='/contact'>Contact</NavLink>
         </ul>
       </nav>
     </Head>
