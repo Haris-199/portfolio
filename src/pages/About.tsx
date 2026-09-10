@@ -1,4 +1,11 @@
 import { styled } from 'styled-components';
+import OriginalDivider from '../components/Divider';
+import Link from '../components/Link';
+
+const Divider = styled(OriginalDivider)`
+  opacity: 0.6;
+  margin-inline: auto;
+`;
 
 const Div = styled.div`
   margin: 0 auto;
@@ -14,14 +21,6 @@ const Div = styled.div`
 const SubTitle = styled.h2`
   font-size: 1.75rem;
   margin-bottom: 1rem;
-`;
-
-const Hr = styled.hr`
-  border: none;
-  border-top: 1px solid ${(props) => props.theme.white};
-  margin: 0.5rem auto;
-  width: 95%;
-  height: 1px;
 `;
 
 const Paragraph = styled.p`
@@ -143,25 +142,27 @@ export default function About() {
       <Part>
         <SubTitle>About Me</SubTitle>
         <Paragraph>
-          I'm Haris Siddiqui, a Computer Engineering student who's passionate about web development
-          and embedded systems. My journey in technology started with a curiosity about how things
-          work, which evolved into a deep passion for technology.
-        </Paragraph>
-        <Paragraph>
-          With a strong foundation in both software and hardware, I bring a unique perspective to my
-          projects, understanding systems from the ground up. I thrive in collaborative environments
-          where I can contribute my technical expertise while continuously learning from others.
+          Hi, I'm Haris. I'm a Computer Engineering student at Toronto Metropolitan
+          University, formerly known as Ryerson. I have a passion for programming,
+          web development, embedded systems, and just computers in general.
+          I love learning and am driven by curiosity. I enjoy creating projects that
+          challenge me to learn new skills and technologies, like a bytecode VM in C, or
+          a multi-cycle CPU in VHDL. Currently, I'm part of the web development team
+          of the <Link href="https://bmes-website.vercel.app/" target="_blank" rel="noopener noreferrer">Biomedical Engineering Society</Link>, and I'm looking for an internship.
         </Paragraph>
       </Part>
-      <Hr />
+
+      <Divider />
+
       <Part>
         <SubTitle>Education</SubTitle>
         <Paragraph>
-          I'm currently pursuing my degree in Computer Engineering at Toronto Metropolitan
-          University, formerly known as Ryerson University, where I'm exploring the fascinating
-          intersection of hardware and software. My academic journey has equipped me with knowledge
-          that I apply to real-world projects, but has also earned me a place on the Dean's List in
-          2023 to 2024 in recognition of my academic excellence.
+          I chose to study Computer Engineering because I wanted to learn about both
+          software and hardware. I enjoy programming, but I also like working with
+          electronics. I like to create projects that combine both of these areas,
+          like a plant monitor that uses sensors to collect data which gets displayed on
+          a web interface. My love for learning got me spot on the Dean's List in 2023
+          and 2024.
           <br />
         </Paragraph>
         <Courses>
@@ -282,53 +283,47 @@ export default function About() {
           </ul>
         </Courses>
         <Paragraph>
-          Beyond education, I'm committed to continuous learning through online courses and hands-on
-          project experience. I believe that tech skills require perpetual growth and practical
-          experience to keep up with rapid technological advancements. I embrace every opportunity
-          to learn, experiment, and challenge myself in order to broaden my skillset.
+          I like to learn outside of school too. I learnt about intepreters and
+          language design by reading <Link href="https://craftinginterpreters.com/" target="_blank" rel="noopener noreferrer">Crafting Interpreters</Link>. At the moment, I'm reading The Practicing Stoic to learn Stoic
+          philosophy. Next, I plan on reading <Link href="https://hypermedia.systems/" target="_blank" rel="noopener noreferrer">Hypermedia Systems</Link> or maybe some more philosophy. If you have any recommendations, feel free to reach out to me on <Link href="https://www.linkedin.com/in/harissidd/" target="_blank" rel="noopener noreferrer">LinkedIn</Link>.
         </Paragraph>
       </Part>
-      <Hr />
+
+      <Divider />
 
       <Part>
         <SubTitle>Technical Skills</SubTitle>
         <Paragraph>
-          My core strength lies in full-stack web development with JavaScript, building scalable and
-          efficient web apps. Additionally, I have hands-on experience with embedded systems
-          programming and FPGA development, allowing me to work on projects that utilize both
-          software and hardware.
+          My core strength lies in full-stack web development with JavaScript and modern frameworks, building
+          scalable and efficient web apps. Additionally, my computer engineering background gives me hands-on
+          experience with systems programming, PCB design, and FPGA development.
         </Paragraph>
         <Skills>
           <ul>
             <li>JavaScript</li>
             <li>TypeScript</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Next.js</li>
-            <li>Express.js</li>
-            <li>HTML/CSS</li>
-            <li>Python</li>
-            <li>Django</li>
+            <li>React & Next.js</li>
+            <li>Node.js & Express</li>
+            <li>Rust</li>
+            <li>Python & Django</li>
             <li>Java</li>
-            <li>Git</li>
-            <li>Docker</li>
+            <li>C</li>
+            <li>PCB Design (EasyEDA / JLCPCB)</li>
             <li>VHDL</li>
+            <li>Git & Docker</li>
           </ul>
         </Skills>
       </Part>
 
-      <Hr />
+      <Divider />
 
       <Part>
         <SubTitle>Beyond Coding</SubTitle>
         <Paragraph>
-          When I'm not immersed in lines of code or tinkering with circuits, I'm probably gaming. I
-          like story-driven games like <em>Red Dead Redemption 2</em>, <em>God of War</em>, or{' '}
-          <em>Assassin's Creed IV: Black Flag</em>; these are probably my favourite. Speedcubing is
-          another hobby of mine, my personal best is 14.57s on 3x3 using the CFOP method. I also
-          like to watch anime. My favourites are <em>Code Geass</em>, <em>Dr. Stone</em>, and{' '}
-          <em>Re: Zero</em>. Beyond that, I love spending time with friends and family; they're what
-          matters most.
+          Outside of coding, I enjoy solving Rubik's cubes, playing chess, video
+          games, and soccer, and watching anime. My favourite games are <em>Red Dead Redemption 2</em> and <em>God of War</em>.
+          The fastest I've solved a cube is 14.329 seconds with the CFOP method. Feel free to challenge me
+          on <Link href="https://www.chess.com/member/5harrisonb03" target="_blank" rel="noopener noreferrer">Chess.com</Link>.
         </Paragraph>
       </Part>
     </Div>
