@@ -12,7 +12,7 @@ const Section = styled.section`
     color: #2c6acf; 
     padding-bottom: 2rem;
   }
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 `;
 
 const Categories = styled.div`
