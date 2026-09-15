@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../../public/data/projects';
 import Divider from '../components/Divider';
+import ContactSection from '../components/ContactSection';
 
 const MainContainer = styled.div`
   display: flex;
@@ -48,16 +49,24 @@ const FeaturedSection = styled.section`
       transform: scale(0.98);
     }
   }
-
-  & > h3 {
-    font-size: clamp(2rem, 6vw, 3rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: #2c6acf; 
-  }
 `;
 
+const Subtitle = styled.h3`
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #2c6acf; 
+`;
+
+const ContactSectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;  
+  width: 100%;
+  margin-bottom: 2rem;
+`;
 
 export default function Home() {
   const featuredProjects = projects.slice(0, 3);
@@ -69,7 +78,7 @@ export default function Home() {
       <Divider />
 
       <FeaturedSection>
-        <h3>Featured Work</h3>
+        <Subtitle>Featured Work</Subtitle>
         <div className="projects">
           {featuredProjects.map((proj) => (
             <ProjectCard key={proj.title} project={proj} />
@@ -83,6 +92,13 @@ export default function Home() {
       <Divider />
 
       <Skills />
+      
+      <Divider />
+      
+      <ContactSectionContainer>
+        <Subtitle>Contact Me</Subtitle>
+        <ContactSection />
+      </ContactSectionContainer>
     </MainContainer>
   );
 }
