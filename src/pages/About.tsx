@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import OriginalDivider from '../components/Divider';
-import Link from '../components/Link';
+import Link from '../components/GlowLink';
 
 const Divider = styled(OriginalDivider)`
   opacity: 0.6;
