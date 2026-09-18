@@ -2,7 +2,6 @@ import { styled } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const Head = styled.header`
-  background: #222;
   padding: 1rem;
   position: sticky;
   top: 0;
@@ -11,125 +10,136 @@ const Head = styled.header`
   justify-content: space-between;
   align-items: center;
 
+  & > .header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 1px; /* Leaves a 1px gap at the bottom for the spinning border */
+    background: ${(props) => props.theme.background || '#000'};
+    z-index: -1;
+  }
+
   @property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
   }
+
   &::after, &::before {
-    box-sizing: content-box;
     content: '';
     position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    padding-bottom: 1px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     animation: spin 8s linear infinite;
     background-image: repeating-conic-gradient(from var(--angle), #c760ca 0%, #2c6acf 15%, #c760ca 33%);
     z-index: -2;
   }
+
   &::before {
-    padding-bottom: 4px;
-    margin-top: -1px;
     filter: blur(10px);
     opacity: 0.75;
   }
+
   @keyframes spin {
-    from {
-      --angle: 0deg;
-    }
-    to {
-      --angle: 360deg;
-    }
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
   }
-  
+
   h1 {
     font-family: 'Roboto', sans-serif;
-    font-size: 2.7rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: ${(props) => props.theme.white};
-
-    &::before {
-      cursor: default;
-      pointer-events: none;
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      left: 50%;
-      top: 49%;
-      translate: -50% -50%;
-      background-image: linear-gradient(15deg, #000, #031e4b, #3e0d3f);
-      z-index: -1;
-    }
+    margin: 0;
+    position: relative;
+    z-index: 1; 
   }
-  
+
   ul {
     list-style: none;
     display: flex;
     gap: 2rem;
+    margin: 0;
+    position: relative;
+    z-index: 1;
   }
 
   .name.active {
     pointer-events: none;
   }
 
-  .active:not(.name) {
-    text-decoration: underline;
-    cursor: default;
-    pointer-events: none;
-    background-color: #222;
-    position: relative;
-
-    &::before {
-      box-sizing: content-box;
-      content: '';
-      position: absolute;
-      border-radius: 6px;
-      height: 100%;
-      width: 100%;
-      left: 50%;
-      top: 50%;
-      translate: -50% -50%;
-      padding: 3.5px 4px;
-      background-image: linear-gradient(to right, #2c6acf, #c760ca);
-      z-index: -1;
-      animation: fade-in-out 1s ease-in-out infinite alternate;
-      box-shadow: 
-        0px 1px 40px 1px rgba(44, 106, 207, 0.4),
-        0px 1px 40px 1px rgba(198, 96, 202, 0.4);
-    }
-
-    @keyframes fade-in-out {
-      to {
-        opacity: 0.55;
-      }
-    }
-  }
-
   a {
-    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
-    text-decoration: none;
     color: ${(props) => props.theme.white};
+    text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
-    border: solid 2px transparent;
+    position: relative;
+    transition: color 0.2s ease;
 
     &:hover {
-      background-color: #222;
-      color: ${(props) => props.theme.white};
+      color: #c760ca;
     }
 
     &:active {
       transform: scale(0.95);
-      box-shadow:
-        0px 1px 40px 1px rgba(195, 208, 229, 0.4),
-        0px 1px 40px 1px rgba(198, 96, 202, 0.4);
-      background-image: linear-gradient(to right,#031e4b, #3e0d3f);
-      background-repeat: no-repeat;
+    }
+
+    &:not(.active):not(.name) {
+      width: max-content;
+      color: ${(props) => props.theme.grey};
+      text-decoration: none;
+      position: relative;
+      align-items: center;
+
+      &::before, 
+      &::after {
+        content: '';
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        height: 2px;
+        bottom: -1.5px;
+        background-image: linear-gradient(to right, #2c6acf, #c760ca);
+        transform: scaleX(0);
+        transition: transform 0.2s ease-in-out;
+        transform-origin: bottom left;
+      }
+      &::after {
+        height: 4px;
+        filter: blur(5px);
+        opacity: 0.8;
+      }
+
+      &:hover::before,
+      &:focus-visible::before,
+      &:hover::after,
+      &:focus-visible::after {
+        transform: scaleX(1);
+      }
+    }
+    
+  }
+
+  .active:not(.name) {
+    color: ${(props) => props.theme.white};
+    pointer-events: none;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 1rem; 
+      right: 1rem;
+      bottom: -1.5px;
+      background-image: linear-gradient(to right, #2c6acf, #c760ca);
+    }
+
+    &::before {
+      height: 2px;
     }
   }
   
@@ -149,15 +159,16 @@ const Head = styled.header`
 export default function Header() {
   return (
     <Head>
+      <div className="header-bg"></div>
       <NavLink to='/' className='name'>
         <h1>Haris Siddiqui</h1>
       </NavLink>
       <nav>
         <ul>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/projects'>Projects</NavLink>
-          <NavLink to='/about'>About</NavLink>
-          <NavLink to='/contact'>Contact</NavLink>
+          <li><NavLink to='/'>Home</NavLink></li>
+          <li><NavLink to='/projects'>Projects</NavLink></li>
+          <li><NavLink to='/about'>About</NavLink></li>
+          <li><NavLink to='/contact'>Contact</NavLink></li>
         </ul>
       </nav>
     </Head>
