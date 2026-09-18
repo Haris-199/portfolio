@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { styled, useTheme } from 'styled-components';
+import profilePic from '../assets/profile.webp';
 
 const HeroContainer = styled.section`
   display: grid;
@@ -163,7 +164,7 @@ export default function Hero() {
       </div>
 
       <div className="picture">
-        <img src="../src/assets/profile.webp" alt="Haris Siddiqui" />
+        <img src={profilePic} alt="Haris Siddiqui" />
       </div>
     </HeroContainer>
   );
