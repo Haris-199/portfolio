@@ -285,7 +285,7 @@ export default function About() {
         <Paragraph>
           I like to learn outside of school too. I learnt about intepreters and
           language design by reading <Link href="https://craftinginterpreters.com/" target="_blank" rel="noopener noreferrer">Crafting Interpreters</Link>. At the moment, I'm reading The Practicing Stoic to learn Stoic
-          philosophy. Next, I plan on reading <Link href="https://hypermedia.systems/" target="_blank" rel="noopener noreferrer">Hypermedia Systems</Link> or maybe some more philosophy. If you have any recommendations, feel free to reach out to me on <Link href="https://www.linkedin.com/in/harissidd/" target="_blank" rel="noopener noreferrer">LinkedIn</Link>.
+          philosophy. Next, I plan on reading Plato's <em>Republic</em> and then maybe <Link href="https://hypermedia.systems/" target="_blank" rel="noopener noreferrer">Hypermedia Systems</Link>. If you have any recommendations, feel free to reach out to me on <Link href="https://www.linkedin.com/in/harissidd/" target="_blank" rel="noopener noreferrer">LinkedIn</Link>.
         </Paragraph>
       </Part>
 
