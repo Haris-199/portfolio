@@ -113,7 +113,6 @@ const _projects: Project[] = [
     longDescription:
       "Explored low-level network programming and the HTTP protocol by engineering a custom server from scratch. The system manages concurrent TCP connections, parses incoming HTTP requests, and reliably serves responses. This project deepened my understanding of socket programming and the underlying mechanics of the web.",
     categories: ["Systems Programming", "Networking", "TCP/IP"],
-    repo: "https://github.com/Haris-199/...",
   },
 ];
 
