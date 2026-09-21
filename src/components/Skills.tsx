@@ -1,4 +1,28 @@
 import styled, { useTheme } from 'styled-components';
+import reactLogo from '../assets/logos/react.svg';
+import reactRouterLogo from '../assets/logos/react-router.svg';
+import tanstackQueryLogo from '../assets/logos/tanstack-query.svg';
+import tailwindLogo from '../assets/logos/tailwind.svg';
+import styledComponentsLogo from '../assets/logos/styled-components.png';
+import webpackLogo from '../assets/logos/webpack.svg';
+import htmlLogo from '../assets/logos/html.svg';
+import cssLogo from '../assets/logos/css.svg';
+import nextLogo from '../assets/logos/next.svg';
+import nodeLogo from '../assets/logos/node.svg';
+import expressLogo from '../assets/logos/express.svg';
+import expressLightLogo from '../assets/logos/express-light.svg';
+import djangoLogo from '../assets/logos/django.svg';
+import djangoLightLogo from '../assets/logos/django-light.svg';
+import prismaLogo from '../assets/logos/prisma.svg';
+import postgresqlLogo from '../assets/logos/postgresql.svg';
+import javascriptLogo from '../assets/logos/javascript.svg';
+import pythonLogo from '../assets/logos/python.svg';
+import javaLogo from '../assets/logos/java.svg';
+import cLogo from '../assets/logos/c.svg';
+import gitLogo from '../assets/logos/git.svg';
+import githubLogo from '../assets/logos/github.svg';
+import dockerLogo from '../assets/logos/docker.svg';
+
 
 const Section = styled.section`
   display: flex;
@@ -105,35 +129,35 @@ export default function Skills() {
           </div>
           <ul>
             <li>
-              <img src="../src/assets/logos/react.svg" alt="React Logo" />
+              <img src={reactLogo} alt="React Logo" />
               <span>React</span>
             </li>
             <li>
-              <img src="../src/assets/logos/react-router.svg" alt="React Router Logo" />
+              <img src={reactRouterLogo} alt="React Router Logo" />
               <span>React Router</span>
             </li>
             <li>
-              <img src="../src/assets/logos/tanstack-query.svg" alt="TanStack Query Logo" />
+              <img src={tanstackQueryLogo} alt="TanStack Query Logo" />
               <span>TanStack Query</span>
             </li>
             <li>
-              <img src="../src/assets/logos/tailwind.svg" alt="Tailwind CSS Logo" />
+              <img src={tailwindLogo} alt="Tailwind CSS Logo" />
               <span>Tailwind CSS</span>
             </li>
             <li>
-              <img src="../src/assets/logos/styled-components.png" alt="styled-components Logo" />
+              <img src={styledComponentsLogo} alt="styled-components Logo" />
               <span>styled-components</span>
             </li>
             <li>
-              <img src="../src/assets/logos/webpack.svg" alt="Webpack Logo" />
+              <img src={webpackLogo} alt="Webpack Logo" />
               <span>Webpack</span>
             </li>
             <li>
-              <img src="../src/assets/logos/html.svg" alt="HTML Logo" />
+              <img src={htmlLogo} alt="HTML Logo" />
               <span>HTML</span>
             </li>
             <li>
-              <img src="../src/assets/logos/css.svg" alt="CSS Logo" />
+              <img src={cssLogo} alt="CSS Logo" />
               <span>CSS</span>
             </li>
           </ul>
@@ -144,27 +168,27 @@ export default function Skills() {
           </div>
           <ul>
             <li>
-              <img src="../src/assets/logos/next.svg" alt="Next.js Logo" />
+              <img src={nextLogo} alt="Next.js Logo" />
               <span>Next.js</span>
             </li>
             <li>
-              <img src="../src/assets/logos/node.svg" alt="Node.js Logo" />
+              <img src={nodeLogo} alt="Node.js Logo" />
               <span>Node.js</span>
             </li>
             <li>
-              <img src={isDark ? "../src/assets/logos/express-light.svg" : "../src/assets/logos/express.svg"} alt="Express Logo" />
+              <img src={isDark ? expressLightLogo : expressLogo} alt="Express Logo" />
               <span>Express.js</span>
             </li>
             <li>
-              <img src={isDark ? "../src/assets/logos/django-light.svg" : "../src/assets/logos/django.svg"} alt="Django Logo" />
+              <img src={isDark ? djangoLightLogo : djangoLogo} alt="Django Logo" />
               <span>Django</span>
             </li>
             <li>
-              <img src="../src/assets/logos/prisma.svg" alt="Prisma Logo" />
+              <img src={prismaLogo} alt="Prisma Logo" />
               <span>Prisma</span>
             </li>
             <li>
-              <img src="../src/assets/logos/postgresql.svg" alt="PostgreSQL Logo" />
+              <img src={postgresqlLogo} alt="PostgreSQL Logo" />
               <span>PostgreSQL</span>
             </li>
           </ul>
@@ -175,19 +199,19 @@ export default function Skills() {
           </div>
           <ul>
             <li>
-              <img src="../src/assets/logos/javascript.svg" alt="JavaScript Logo" />
+              <img src={javascriptLogo} alt="JavaScript Logo" />
               <span>JavaScript</span>
             </li>
             <li>
-              <img src="../src/assets/logos/python.svg" alt="Python Logo" />
+              <img src={pythonLogo} alt="Python Logo" />
               <span>Python</span>
             </li>
             <li>
-              <img src="../src/assets/logos/java.svg" alt="Java Logo" />
+              <img src={javaLogo} alt="Java Logo" />
               <span>Java</span>
             </li>
             <li>
-              <img src="../src/assets/logos/c.svg" alt="C Logo" />
+              <img src={cLogo} alt="C Logo" />
               <span>C</span>
             </li>
           </ul>
@@ -198,15 +222,15 @@ export default function Skills() {
           </div>
           <ul>
             <li>
-              <img src="../src/assets/logos/git.svg" alt="Git Logo" />
+              <img src={gitLogo} alt="Git Logo" />
               <span>Git</span>
             </li>
             <li>
-              <img src="../src/assets/logos/github.svg" alt="GitHub Logo" />
+              <img src={githubLogo} alt="GitHub Logo" />
               <span>GitHub</span>
             </li>
             <li>
-              <img src="../src/assets/logos/docker.svg" alt="Docker Logo" />
+              <img src={dockerLogo} alt="Docker Logo" />
               <span>Docker</span>
             </li>
           </ul>

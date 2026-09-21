@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import Skills from '../components/Skills';
 import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
-import { projects } from '../../public/data/projects';
+import { projects } from '../data/projects';
 import Divider from '../components/Divider';
 import ContactSection from '../components/ContactSection';
 
@@ -92,9 +92,9 @@ export default function Home() {
       <Divider />
 
       <Skills />
-      
+
       <Divider />
-      
+
       <ContactSectionContainer>
         <Subtitle>Contact Me</Subtitle>
         <ContactSection />

@@ -1,6 +1,8 @@
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 import GlowLink from './GlowLink';
+import githubLogo from '../assets/logos/github.svg';
+import linkedinLogo from '../assets/logos/linkedin.svg';
 
 const FooterContainer = styled.footer`
   background-color: ${(props) => props.theme.background || '#000'};
@@ -121,11 +123,11 @@ export default function Footer() {
       <Links>
         <div className="socials">
           <GlowLink target='_blank' href="https://github.com/Haris-199/">
-            <img src="../src/assets/logos/github.svg" alt="GitHub Logo" />
+            <img src={githubLogo} alt="GitHub Logo" />
             <span>GitHub</span>
           </GlowLink>
           <GlowLink target='_blank' href="https://www.linkedin.com/in/harissidd/">
-            <img src="../src/assets/logos/linkedin.svg" alt="LinkedIn Logo" />
+            <img src={linkedinLogo} alt="LinkedIn Logo" />
             <span>LinkedIn</span>
           </GlowLink>
         </div>

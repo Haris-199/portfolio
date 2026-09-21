@@ -161,7 +161,7 @@ export default function About() {
           software and hardware. I enjoy programming, but I also like working with
           electronics. I like to create projects that combine both of these areas,
           like a plant monitor that uses sensors to collect data which gets displayed on
-          a web interface. My love for learning got me spot on the Dean's List in 2023
+          a web interface. My love for learning got me a spot on the Dean's List in 2023
           and 2024.
           <br />
         </Paragraph>

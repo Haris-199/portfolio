@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { styled, useTheme } from 'styled-components';
+import githubLogo from '../assets/logos/github.svg';
+import linkedinLogo from '../assets/logos/linkedin.svg';
 import profilePic from '../assets/profile.webp';
 
 const HeroContainer = styled.section`
@@ -145,7 +147,7 @@ export default function Hero() {
           <div className="social-links">
             <a href="https://github.com/Haris-199/" target="_blank" rel="noreferrer" aria-label="GitHub">
               <img
-                src="../src/assets/logos/github.svg"
+                src={githubLogo}
                 className={isDark ? 'dark' : ''}
                 alt="GitHub"
                 style={isDark ? { filter: 'invert(1)' } : {}}
@@ -153,7 +155,7 @@ export default function Hero() {
             </a>
             <a href="https://www.linkedin.com/in/harissidd/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <img
-                src="../src/assets/logos/linkedin.svg"
+                src={linkedinLogo}
                 className={isDark ? 'dark' : ''}
                 alt="LinkedIn"
                 style={isDark ? { filter: 'invert(1)' } : {}}
