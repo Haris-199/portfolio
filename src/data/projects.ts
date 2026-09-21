@@ -1,3 +1,10 @@
+import neoDriveImg from "../assets/projects/NeoDrive.png";
+import stelaImg from "../assets/projects/Stela.png";
+import bmesImg from "../assets/projects/BMES.png";
+import libraryImg from "../assets/projects/Library.png";
+import interpreterImg from "../assets/projects/Interpreter.png";
+import plantMonitorImg from "../assets/projects/plantMonitor.png";
+
 export type Project = {
   id: string;
   title: string;
@@ -23,7 +30,7 @@ const _projects: Project[] = [
     categories: ["Node.js", "Express.js", "PostgreSQL", "Bootstrap"],
     link: "https://neodrive-production.up.railway.app/",
     repo: "https://github.com/Haris-199/file-uploader/",
-    images: ["src/assets/projects/NeoDrive.png"],
+    images: [neoDriveImg],
   },
   {
     id: "stela-chat",
@@ -43,10 +50,7 @@ const _projects: Project[] = [
     ],
     link: "https://stela-chat.up.railway.app/",
     repo: "https://github.com/Hi-kue/stela-chat",
-    images: [
-      "/assets/projects/homescreen.png",
-      "/assets/projects/widescreen.png",
-    ],
+    images: [stelaImg],
   },
   {
     id: "bmes-platform",
@@ -58,6 +62,20 @@ const _projects: Project[] = [
       "Collaborated with a six-person team to architect and launch the primary web platform for the Biomedical Engineering Society. Built utilizing a modern Next.js stack with Tailwind CSS, the site handles organizational data and event routing. It was initially deployed on Vercel, featuring architectural planning for scalable backend migrations to AWS and Supabase.",
     categories: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     link: "https://bmes-tmu.vercel.app/",
+    images: [bmesImg],
+  },
+  {
+    id: "plant-monitor",
+    title: "IoT Plant Monitor",
+    subtitle: "Sensor Data Collection & Web Dashboard",
+    description:
+      "An embedded system that collects moisture and environmental data using sensors and displays it on a live web interface.",
+    longDescription:
+      "Bridged the gap between hardware and software by building a complete end-to-end plant monitoring system. The hardware utilizes sensors to collect real-time environmental telemetry, which is then transmitted and aggregated to a full-stack web dashboard, allowing for remote monitoring of plant health.",
+    categories: ["Embedded Systems", "IoT", "Web Development", "ESP32", "IC2"],
+    repo:
+      "https://github.com/rafa-ashraf/IoT-Based-Smart-Agriculture-Monitoring-Project",
+    images: [plantMonitorImg],
   },
   {
     id: "digital-library",
@@ -68,33 +86,23 @@ const _projects: Project[] = [
     longDescription:
       "Engineered a three-tier cloud-native architecture using a React Native front end, a stateless Node.js/Express API, and Firebase. The platform resolves common library usability issues by offering unified catalogue search, digital media borrowing, and personalized recommendations based on rental history and tag similarity. It handles concurrent access, role-based security, and accurate real-time inventory tracking.",
     categories: [
-      "React Native",
-      "Node.js",
+      "Next.js",
+      "Tailwind CSS",
       "Firebase",
       "TypeScript",
-      "Express",
     ],
+    images: [libraryImg],
   },
   {
     id: "vm-interpreter",
     title: "Bytecode Virtual Machine",
     subtitle: "Interpreter for a Custom Language",
     description:
-      "A custom interpreter architecture and LR parser engineered from scratch.",
+      "A custom interpreter made from scratch in C utilizing a Pratt parser. The language features include loops, functions, closures (implemented with upvalues), and classes. There's also a mark and sweep garbage collector.",
     longDescription:
-      "Explored deep programming language semantics by implementing a custom LR parser in Java and designing a highly efficient bytecode virtual machine. The architecture leverages Rust and C to manage low-level memory allocation, bridging the gap between object-oriented parsing paradigms and bare-metal execution speed.",
+      "Explored deep programming language semantics by implementing a custom LL1 parser in C and designing a highly efficient bytecode virtual machine. The architecture leverages Rust and C to manage low-level memory allocation, bridging the gap between object-oriented parsing paradigms and bare-metal execution speed.",
     categories: ["C", "Systems Programming", "glibc"],
-  },
-  {
-    id: "plant-monitor",
-    title: "IoT Plant Monitor",
-    subtitle: "Sensor Data Collection & Web Dashboard",
-    description:
-      "An embedded system that collects moisture and environmental data using sensors and displays it on a live web interface.",
-    longDescription:
-      "Bridged the gap between hardware and software by building a complete end-to-end plant monitoring system. The hardware utilizes sensors to collect real-time environmental telemetry, which is then transmitted and aggregated to a full-stack web dashboard, allowing for remote monitoring of plant health.",
-    categories: ["Embedded Systems", "IoT", "Web Development", "Sensors"],
-    repo: "https://github.com/Haris-199/...",
+    images: [interpreterImg],
   },
   {
     id: "http-server",

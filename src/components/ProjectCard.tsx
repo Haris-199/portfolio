@@ -1,6 +1,6 @@
-import { Project } from '../../public/data/projects';
 import { styled } from 'styled-components';
 import { ExternalLink } from 'lucide-react';
+import { Project } from '../data/projects';
 
 const Div = styled.div`
   display: flex;
@@ -99,8 +99,7 @@ const LinksDiv = styled.div`
 
     @media (max-width: 768px) {
       font-size: 0.79rem;
-    padding: 0.3rem 0.5rem;
-
+      padding: 0.3rem 0.5rem;
     }
   }
 `;
@@ -116,7 +115,7 @@ const CategoriesDiv = styled.div`
     border: 1px solid rgba(199, 96, 202, 0.4);
     color: ${(props) => props.theme.text || 'white'};
     padding: 0.3rem 0.75rem;
-    border-radius: 20px;
+    border-radius: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
     font-weight: bold;
@@ -140,7 +139,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <h3 className="title">{project.title}</h3>
         <p className="subtitle">{project.subtitle}</p>
       </div>
-      <ImageDiv>{project.images && <img src={project.images[0]}></img>}</ImageDiv>
+      <ImageDiv>{project.images && <img src={project.images[0]} alt={project.title} />}</ImageDiv>
       <p className="description">{project.description}</p>
       <LinksDiv>
         {project.repo && (

@@ -1,12 +1,12 @@
 import { styled } from 'styled-components';
 import ProjectCard from '../components/ProjectCard';
-import { projects } from '../../public/data/projects';
+import { projects } from '../data/projects';
 
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 1rem;
+  padding: 1rem;
   max-width: 1400px;
   margin: 0 auto;
 `;
