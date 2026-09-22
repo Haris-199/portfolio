@@ -36,13 +36,13 @@ const HeroContainer = styled.section`
     letter-spacing: -0.02em;
 
     span {
-      color: #2c6acf; 
+      color: ${(props) => props.theme.primary}; 
     }
   }
 
   h2 {
     font-size: clamp(1.15rem, 2vw, 1.5rem);
-    color: ${(props) => props.theme.text || '#a0a0a0'};
+    color: ${(props) => props.theme.text};
     font-weight: 400;
     line-height: 1.5;
     max-width: 600px;
@@ -63,8 +63,8 @@ const HeroContainer = styled.section`
   .btn-primary {
     padding: 0.85rem 2.5rem;
     border-radius: 0.5rem;
-    background-color: #2c6acf;
-    color: white;
+    background-color: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.buttonText};
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 700;
@@ -72,9 +72,9 @@ const HeroContainer = styled.section`
 
     &:hover {
       transform: scale(1.02);
-      background-color: #2457aa;
+      background-color: ${(props) => props.theme.primaryHover};
     }
-    
+
     &:active {
       transform: scale(0.98);
     }
@@ -91,14 +91,14 @@ const HeroContainer = styled.section`
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
+      background: ${(props) => props.theme.glassBgHover};
       backdrop-filter: blur(7px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid ${(props) => props.theme.glassBorderHover};
       transition: all 0.2s ease;
 
       &:hover {
         transform: translateY(-3px);
-        background: rgba(255, 255, 255, 0.15);
+        background: ${(props) => props.theme.glassBgActive};
       }
 
       img {
@@ -118,15 +118,14 @@ const HeroContainer = styled.section`
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px ${(props) => props.theme.shadow};
+      border: 2px solid ${(props) => props.theme.glassBorderHover};
     }
   }
 `;
 
 export default function Hero() {
-  const theme = useTheme();
-  const isDark = (theme as { background?: string }).background === '#000000';
+  const { isDark } = useTheme();
 
   return (
     <HeroContainer>

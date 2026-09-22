@@ -21,7 +21,7 @@ const Div = styled.div`
     gap: 0.25rem;
     width: 80%;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid ${(props) => props.theme.grey};
   }
 
   .title {
@@ -80,7 +80,7 @@ const LinksDiv = styled.div`
     text-decoration: none;
     font-size: 1rem;
     background-color: ${(props) => props.theme.primary};
-    color: ${(props) => props.theme.white};
+    color: ${(props) => props.theme.buttonText};
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     border: none;
@@ -111,9 +111,9 @@ const CategoriesDiv = styled.div`
   gap: 0.25rem;
 
   .category {
-    background-color: rgba(199, 96, 202, 0.2);
-    border: 1px solid rgba(199, 96, 202, 0.4);
-    color: ${(props) => props.theme.text || 'white'};
+    background-color: ${(props) => props.theme.pink}33;
+    border: 1px solid ${(props) => props.theme.pink}66;
+    color: ${(props) => props.theme.text};
     padding: 0.3rem 0.75rem;
     border-radius: 1rem;
     font-family: 'Montserrat', sans-serif;

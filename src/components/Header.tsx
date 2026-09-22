@@ -16,7 +16,7 @@ const Head = styled.header`
     left: 0;
     right: 0;
     bottom: 1px; /* Leaves a 1px gap at the bottom for the spinning border */
-    background: ${(props) => props.theme.background || '#000'};
+    background: ${(props) => props.theme.background};
     z-index: -1;
   }
 
@@ -34,7 +34,12 @@ const Head = styled.header`
     right: 0;
     bottom: 0;
     animation: spin 8s linear infinite;
-    background-image: repeating-conic-gradient(from var(--angle), #c760ca 0%, #2c6acf 15%, #c760ca 33%);
+    background-image: repeating-conic-gradient(
+      from var(--angle),
+      ${(props) => props.theme.pink} 0%,
+      ${(props) => props.theme.primary} 15%,
+      ${(props) => props.theme.pink} 33%
+    );
     z-index: -2;
   }
 
@@ -52,7 +57,7 @@ const Head = styled.header`
     font-family: 'Roboto', sans-serif;
     font-size: 1.75rem;
     font-weight: 700;
-    color: ${(props) => props.theme.white};
+    color: ${(props) => props.theme.text};
     margin: 0;
     position: relative;
     z-index: 1; 
@@ -73,14 +78,14 @@ const Head = styled.header`
 
   a {
     font-size: 1.2rem;
-    color: ${(props) => props.theme.white};
+    color: ${(props) => props.theme.text};
     text-decoration: none;
     padding: 0.5rem 1rem;
     position: relative;
     transition: color 0.2s ease;
 
     &:hover {
-      color: #c760ca;
+      color: ${(props) => props.theme.pink};
     }
 
     &:active {
@@ -102,7 +107,11 @@ const Head = styled.header`
         right: 1rem;
         height: 2px;
         bottom: -1.5px;
-        background-image: linear-gradient(to right, #2c6acf, #c760ca);
+        background-image: linear-gradient(
+          to right,
+          ${(props) => props.theme.primary},
+          ${(props) => props.theme.pink}
+        );
         transform: scaleX(0);
         transition: transform 0.2s ease-in-out;
         transform-origin: bottom left;
@@ -124,7 +133,7 @@ const Head = styled.header`
   }
 
   .active:not(.name) {
-    color: ${(props) => props.theme.white};
+    color: ${(props) => props.theme.text};
     pointer-events: none;
     position: relative;
 
@@ -135,7 +144,11 @@ const Head = styled.header`
       left: 1rem; 
       right: 1rem;
       bottom: -1.5px;
-      background-image: linear-gradient(to right, #2c6acf, #c760ca);
+      background-image: linear-gradient(
+        to right,
+        ${(props) => props.theme.primary},
+        ${(props) => props.theme.pink}
+      );
     }
 
     &::before {

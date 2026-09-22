@@ -1,4 +1,4 @@
-import styled, { useTheme } from 'styled-components';
+import { styled, useTheme } from 'styled-components';
 import reactLogo from '../assets/logos/react.svg';
 import reactRouterLogo from '../assets/logos/react-router.svg';
 import tanstackQueryLogo from '../assets/logos/tanstack-query.svg';
@@ -33,7 +33,7 @@ const Section = styled.section`
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: #2c6acf; 
+    color: ${(props) => props.theme.text}; 
     padding-bottom: 2rem;
   }
   padding-bottom: 2rem;
@@ -89,7 +89,7 @@ const Category = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
-    color: white;
+    color: ${(props) => props.theme.text};
     font-size: 1.2rem;
     text-align: center;
 
@@ -116,8 +116,7 @@ const Category = styled.div`
 `;
 
 export default function Skills() {
-  const theme = useTheme();
-  const isDark = theme.background === '#000000';
+  const { isDark } = useTheme();
 
   return (
     <Section>

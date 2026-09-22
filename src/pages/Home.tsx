@@ -33,8 +33,8 @@ const FeaturedSection = styled.section`
   .view-all {
     padding: 0.85rem 2.5rem;
     border-radius: 0.5rem;
-    background-color: #2c6acf;
-    color: white;
+    background-color: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.buttonText};
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 700;
@@ -42,7 +42,7 @@ const FeaturedSection = styled.section`
 
     &:hover {
       transform: scale(1.02);
-      background-color: #2457aa;
+      background-color: ${(props) => props.theme.primaryHover};
     }
     
     &:active {
@@ -56,7 +56,7 @@ const Subtitle = styled.h3`
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #2c6acf; 
+  color: ${(props) => props.theme.primary}; 
 `;
 
 const ContactSectionContainer = styled.div`

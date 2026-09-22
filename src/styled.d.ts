@@ -2,18 +2,28 @@ import "styled-components";
 
 declare module "styled-components" {
   export interface DefaultTheme {
-    black: string;
-    blue: string;
-    lightblue: string;
-    orange: string;
-    grey: string;
+    primary: string;
+    primaryHover: string;
     pink: string;
-    shadow: string;
-    white: string;
     text: string;
     background: string;
     foreground: string;
-    primary: string;
-    secondary: string;
+    grey: string;
+    buttonText: string;
+
+    glassBg: string;
+    glassBorder: string;
+    glassBorderTop: string;
+    glassBgHover: string;
+    glassBorderHover: string;
+    glassBgActive: string;
+
+    inputBg: string;
+    inputBorder: string;
+    inputBgFocus: string;
+
+    shadow: string;
+    textShadow: string;
+    isDark: boolean;
   }
 }

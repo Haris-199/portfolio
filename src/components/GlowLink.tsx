@@ -18,7 +18,11 @@ const Link = styled.a`
     width: 100%;
     height: 2px;
     bottom: -1.5px;
-    background-image: linear-gradient(to right, #2c6acf, #c760ca);
+    background-image: linear-gradient(
+      to right,
+      ${(props) => props.theme.primary},
+      ${(props) => props.theme.pink}
+    );
     transform: scaleX(0);
     transition: transform 0.2s ease-in-out;
     transform-origin: bottom left;

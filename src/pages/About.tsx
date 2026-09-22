@@ -94,7 +94,7 @@ const Skills = styled.div`
     row-gap: 0.5rem;
   }
   & > ul > li {
-    border-bottom: 2px solid #c760ca;
+    border-bottom: 2px solid ${(props) => props.theme.pink};
     letter-spacing: 1px;
     position: relative;
 
@@ -105,7 +105,7 @@ const Skills = styled.div`
       bottom: -3px;
       width: 100%;
       height: 4px;
-      background-color: #c760ca;
+      background-color: ${(props) => props.theme.pink};
       filter: blur(5px);
       animation: pinkUnderline infinite alternate 1.5s ease-in-out;
 

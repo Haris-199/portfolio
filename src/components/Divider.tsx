@@ -8,7 +8,7 @@ const Divider = styled.hr`
   background: linear-gradient(
     to right, 
     transparent, 
-    ${(props) => props.theme.text || '#555'}, 
+    ${(props) => props.theme.text}, 
     transparent
   );
   opacity: 0.25;

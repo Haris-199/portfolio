@@ -10,14 +10,14 @@ const StyledForm = styled.form`
   max-width: 800px;
   margin: 0 auto;
   
-  background: rgba(255, 255, 255, 0.03);
+  background: ${(props) => props.theme.glassBg};
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid ${(props) => props.theme.glassBorder};
+  border-top: 1px solid ${(props) => props.theme.glassBorderTop};
   border-radius: 12px;
   padding: 2.5rem;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px 0 ${(props) => props.theme.shadow};
 
   @media (max-width: 600px) {
     padding: 1.5rem;
@@ -35,7 +35,7 @@ const FormGroup = styled.div`
     gap: 0.5rem;
     font-size: 1rem;
     font-weight: 600;
-    color: ${(props) => props.theme.text || '#ffffff'};
+    color: ${(props) => props.theme.text};
     letter-spacing: 0.02em;
   }
 
@@ -43,18 +43,19 @@ const FormGroup = styled.div`
   textarea {
     padding: 0.85rem;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(0, 0, 0, 0.2);
-    color: ${(props) => props.theme.text || '#ffffff'};
+    border: 1px solid ${(props) => props.theme.inputBorder};
+    background: ${(props) => props.theme.inputBg};
+    color: ${(props) => props.theme.text};
     font-family: inherit;
     font-size: 1rem;
     transition: all 0.2s ease;
 
     &:focus {
       outline: none;
-      border-color: #2c6acf;
-      background: rgba(0, 0, 0, 0.4);
-      box-shadow: 0 0 0 2px rgba(44, 106, 207, 0.2);
+      border-color: ${(props) => props.theme.primary};
+      background: ${(props) => props.theme.inputBgFocus};
+      /* Uses hex code + 33 for 20% opacity */
+      box-shadow: 0 0 0 2px ${(props) => props.theme.primary}33; 
     }
   }
 
@@ -73,8 +74,8 @@ const SubmitButton = styled.button`
   gap: 0.5rem;
   padding: 1rem 2.5rem;
   border-radius: 8px;
-  background-color: #2c6acf;
-  color: white;
+  background-color: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.buttonText};
   font-size: 1.1rem;
   font-weight: 700;
   border: none;
@@ -87,7 +88,7 @@ const SubmitButton = styled.button`
 
   &:hover {
     transform: scale(1.02);
-    background-color: #2457aa;
+    background-color: ${(props) => props.theme.primaryHover};
   }
   
   &:active {
@@ -99,7 +100,7 @@ export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -107,8 +108,8 @@ export default function ContactForm() {
         Array.from(formData.entries(), ([key, value]) => [key, String(value)] as [string, string])
       ).toString()
     })
-    .then(() => alert("Message sent successfully!"))
-    .catch((error) => alert(error));
+      .then(() => alert("Message sent successfully!"))
+      .catch((error) => alert(error));
   };
 
   return (

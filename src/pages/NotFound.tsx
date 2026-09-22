@@ -14,7 +14,7 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: clamp(3rem, 15vw, 8rem);
   font-weight: 800;
-  color: ${(props) => props.theme.text || '#ffffff'};
+  color: ${(props) => props.theme.text};
   margin: 0;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -22,7 +22,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
   font-size: clamp(1.5rem, 3vw, 2.5rem);
-  color: #2c6acf; /* Solid blue, no gradients */
+  color: ${(props) => props.theme.primary};
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
@@ -31,8 +31,8 @@ const Subtitle = styled.h2`
 const HomeButton = styled(Link)`
   padding: 0.85rem 2.5rem;
   border-radius: 8px;
-  background-color: #2c6acf;
-  color: white;
+  background-color: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.buttonText};
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 700;
@@ -40,7 +40,7 @@ const HomeButton = styled(Link)`
 
   &:hover {
     transform: scale(1.02);
-    background-color: #2457aa;
+    background-color: ${(props) => props.theme.primaryHover};
   }
   
   &:active {

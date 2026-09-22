@@ -5,10 +5,10 @@ import githubLogo from '../assets/logos/github.svg';
 import linkedinLogo from '../assets/logos/linkedin.svg';
 
 const FooterContainer = styled.footer`
-  background-color: ${(props) => props.theme.background || '#000'};
+  background-color: ${(props) => props.theme.background};
   padding: 1rem 5rem;
   font-size: 0.9rem;
-  text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000;
+  text-shadow: ${(props) => props.theme.textShadow};
 
   display: flex;
   flex-direction: column;
@@ -34,9 +34,9 @@ const FooterContainer = styled.footer`
     animation: spin 8s linear infinite;
     background-image: repeating-conic-gradient(
       from var(--angle),
-      #2c6acf 0%,
-      #c760ca 15%,
-      #2c6acf 33%
+      ${(props) => props.theme.primary} 0%,
+      ${(props) => props.theme.pink} 15%,
+      ${(props) => props.theme.primary} 33%
     );
     z-index: -1;
   }
@@ -103,7 +103,7 @@ const Links = styled.nav`
     margin-right: 0.25rem;
     margin-bottom: 2px;
     filter: invert(
-      ${(props) => (props.theme.background === '#000000' ? 1 : 0)}
+      ${(props) => (props.theme.isDark ? 1 : 0)}
     );
   }
 

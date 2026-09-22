@@ -18,7 +18,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #000; 
+  background: #000;
   border-left: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -29,7 +29,9 @@
 }
 
 body {
-  font-family: Helvetica, system-ui, 'Segoe UI', Roboto, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family:
+    Helvetica, system-ui, 'Segoe UI', Roboto, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
   height: 100dvh;
 }
 

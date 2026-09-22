@@ -16,7 +16,7 @@ const Title = styled.h1`
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #2c6acf; 
+  color: ${(props) => props.theme.primary}; 
 `;
 
 

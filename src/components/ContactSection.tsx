@@ -18,11 +18,10 @@ const InfoCard = styled.div`
   padding: 1rem;
   font-family: inherit;
   
-  /* Glass effect */
-  background: rgba(255, 255, 255, 0.03);
+  background: ${(props) => props.theme.glassBg};
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid ${(props) => props.theme.glassBorder};
   border-radius: 8px;
 
   .social-links {
@@ -36,14 +35,14 @@ const InfoCard = styled.div`
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
+      background: ${(props) => props.theme.glassBgHover};
       backdrop-filter: blur(7px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid ${(props) => props.theme.glassBorderHover};
       transition: all 0.2s ease;
 
       &:hover {
         transform: translateY(-3px);
-        background: rgba(255, 255, 255, 0.15);
+        background: ${(props) => props.theme.glassBgActive};
       }
 
       img {
@@ -73,7 +72,7 @@ const EmailLink = styled.a`
     width: 100%;
     height: 2px;
     bottom: -1.5px;
-    background-image: linear-gradient(to right, #2c6acf, #c760ca);
+    background-image: linear-gradient(to right, ${(props) => props.theme.primary}, ${(props) => props.theme.pink});
     transform: scaleX(0);
     transition: transform 0.2s ease-in-out;
     transform-origin: bottom left;
@@ -93,8 +92,7 @@ const EmailLink = styled.a`
 `;
 
 export default function ContactSection() {
-  const theme = useTheme();
-  const isDark = theme.background === '#000000';
+  const { isDark } = useTheme();
 
   return (
     <>
