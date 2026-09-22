@@ -23,7 +23,6 @@ import gitLogo from '../assets/logos/git.svg';
 import githubLogo from '../assets/logos/github.svg';
 import dockerLogo from '../assets/logos/docker.svg';
 
-
 const Section = styled.section`
   display: flex;
   align-items: center;
@@ -33,7 +32,7 @@ const Section = styled.section`
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: ${(props) => props.theme.text}; 
+    color: ${(props) => props.theme.primary}; 
     padding-bottom: 2rem;
   }
   padding-bottom: 2rem;
@@ -64,6 +63,8 @@ const Category = styled.div`
     height: calc(100% + 20px);
     filter: blur(10px);
     border: 10px solid ${(props) => props.theme.primary};
+    /* Hides the muddy background glow entirely in light mode */
+    display: ${(props) => props.theme.isDark ? 'block' : 'none'};
   }
 
   & > div > h4 {
@@ -74,11 +75,12 @@ const Category = styled.div`
 
     &::after {
       content: '';
-      display: block;
       width: 100%;
       height: 2px;
       filter: blur(4px);
       background: ${(props) => props.theme.primary};
+      /* Hides the muddy text glow in light mode */
+      display: ${(props) => props.theme.isDark ? 'block' : 'none'};
     }
   }
 
@@ -101,6 +103,10 @@ const Category = styled.div`
       border-radius: 100px;
       gap: 0.5rem;
       margin-bottom: 0.5rem;
+      
+      /* Adds crisp boundaries to the pills in light mode so they don't get lost */
+      border: 1px solid ${(props) => props.theme.isDark ? 'transparent' : 'rgba(0, 0, 0, 0.05)'};
+      box-shadow: ${(props) => props.theme.isDark ? 'none' : '0 2px 6px rgba(0, 0, 0, 0.06)'};
 
       & > img {
         width: 1.45rem;

@@ -35,6 +35,7 @@ const Courses = styled.div`
 
   & > p {
     font-size: 1.1rem;
+    color: ${(props) => props.theme.text};
   }
 
   & > ul {
@@ -63,18 +64,17 @@ const Courses = styled.div`
       left: 0;
       bottom: -3px;
       width: 100%;
-      height: 6px;
-      background-color: #2c6acf;
-      filter: blur(5px);
+      height: ${(props) => props.theme.isDark ? '6px' : '4px'};
+      background-color: ${(props) => props.theme.primary};
+      
+      /* Drops the blur and lowers opacity in light mode for a clean highlight */
+      filter: ${(props) => props.theme.isDark ? 'blur(5px)' : 'none'};
+      opacity: ${(props) => props.theme.isDark ? '1' : '0.2'};
       animation: blueUnderline infinite alternate 1.5s ease-in-out;
 
       @keyframes blueUnderline {
-        0% {
-          transform: scale(1, 0);
-        }
-        100% {
-          transform: scale(1, 1);
-        }
+        0% { transform: scale(1, 0); }
+        100% { transform: scale(1, 1); }
       }
     }
 
@@ -97,6 +97,7 @@ const Skills = styled.div`
     border-bottom: 2px solid ${(props) => props.theme.pink};
     letter-spacing: 1px;
     position: relative;
+    color: ${(props) => props.theme.text};
 
     &::after {
       content: '';
@@ -106,16 +107,15 @@ const Skills = styled.div`
       width: 100%;
       height: 4px;
       background-color: ${(props) => props.theme.pink};
-      filter: blur(5px);
+      
+      /* Same clean highlight fix for the pink underlines */
+      filter: ${(props) => props.theme.isDark ? 'blur(5px)' : 'none'};
+      opacity: ${(props) => props.theme.isDark ? '1' : '0.2'};
       animation: pinkUnderline infinite alternate 1.5s ease-in-out;
 
       @keyframes pinkUnderline {
-        0% {
-          transform: scale(1, 0);
-        }
-        100% {
-          transform: scale(1.1, 1);
-        }
+        0% { transform: scale(1, 0); }
+        100% { transform: scale(1.1, 1); }
       }
     }
 

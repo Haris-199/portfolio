@@ -9,7 +9,7 @@ const StyledForm = styled.form`
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  
+
   background: ${(props) => props.theme.glassBg};
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -17,7 +17,7 @@ const StyledForm = styled.form`
   border-top: 1px solid ${(props) => props.theme.glassBorderTop};
   border-radius: 12px;
   padding: 2.5rem;
-  box-shadow: 0 8px 32px 0 ${(props) => props.theme.shadow};
+  box-shadow: ${(props) => props.theme.boxShadow};
 
   @media (max-width: 600px) {
     padding: 1.5rem;

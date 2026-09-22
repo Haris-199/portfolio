@@ -22,8 +22,8 @@ declare module "styled-components" {
     inputBorder: string;
     inputBgFocus: string;
 
-    shadow: string;
     textShadow: string;
+    boxShadow: string;
     isDark: boolean;
   }
 }

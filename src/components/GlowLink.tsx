@@ -24,11 +24,15 @@ const Link = styled.a`
       ${(props) => props.theme.pink}
     );
     transform: scaleX(0);
-    transition: transform 0.2s ease-in-out;
+
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: bottom left;
+    will-change: transform;
+    backface-visibility: hidden;
   }
+  
   &::after {
-    height: 4px;
+    height: ${(props) => props.theme.isDark ? '4px' : '2px'};
     filter: blur(5px);
     opacity: 0.8;
   }

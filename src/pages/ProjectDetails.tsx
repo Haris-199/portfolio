@@ -27,7 +27,7 @@ const DetailsContainer = styled.div`
     aspect-ratio: 16 / 9;
     border: none;
     border-radius: 12px;
-    box-shadow: 0 10px 30px ${(props) => props.theme.shadow};
+    box-shadow: ${(props) => props.theme.boxShadow};
   }
 `;
 

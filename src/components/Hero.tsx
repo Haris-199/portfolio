@@ -118,7 +118,7 @@ const HeroContainer = styled.section`
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 2rem;
-      box-shadow: 0 10px 30px ${(props) => props.theme.shadow};
+      box-shadow: ${(props) => props.theme.boxShadow};
       border: 2px solid ${(props) => props.theme.glassBorderHover};
     }
   }

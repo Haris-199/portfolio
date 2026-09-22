@@ -1,5 +1,6 @@
 import { styled } from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { Sun, Moon } from 'lucide-react';
 
 const Head = styled.header`
   padding: 1rem;
@@ -15,7 +16,7 @@ const Head = styled.header`
     top: 0;
     left: 0;
     right: 0;
-    bottom: 1px; /* Leaves a 1px gap at the bottom for the spinning border */
+    bottom: 1px;
     background: ${(props) => props.theme.background};
     z-index: -1;
   }
@@ -66,6 +67,7 @@ const Head = styled.header`
   ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 2rem;
     margin: 0;
     position: relative;
@@ -104,20 +106,19 @@ const Head = styled.header`
         content: '';
         position: absolute;
         left: 1rem;
-        right: 1rem;
+        bottom: 0px; 
         height: 2px;
-        bottom: -1.5px;
+        width: 0;
         background-image: linear-gradient(
           to right,
           ${(props) => props.theme.primary},
           ${(props) => props.theme.pink}
         );
-        transform: scaleX(0);
-        transition: transform 0.2s ease-in-out;
-        transform-origin: bottom left;
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
+      
       &::after {
-        height: 4px;
+        height: ${(props) => props.theme.isDark ? '4px' : '2px'};
         filter: blur(5px);
         opacity: 0.8;
       }
@@ -126,10 +127,9 @@ const Head = styled.header`
       &:focus-visible::before,
       &:hover::after,
       &:focus-visible::after {
-        transform: scaleX(1);
+        width: calc(100% - 2rem);
       }
     }
-    
   }
 
   .active:not(.name) {
@@ -142,20 +142,22 @@ const Head = styled.header`
       content: '';
       position: absolute;
       left: 1rem; 
-      right: 1rem;
-      bottom: -1.5px;
-      background-image: linear-gradient(
-        to right,
-        ${(props) => props.theme.primary},
-        ${(props) => props.theme.pink}
-      );
+      bottom: 0px;
+      width: calc(100% - 2rem);
+      background-image: linear-gradient(to right, ${(props) => props.theme.primary}, ${(props) => props.theme.pink});
     }
 
     &::before {
       height: 2px;
     }
+
+    &::after {
+      height: ${(props) => props.theme.isDark ? '4px' : '2px'};
+      filter: blur(5px);
+      opacity: 0.8;
+    }
   }
-  
+
   @media (min-width: 1300px) {
     padding: 1rem 5%;
   }
@@ -169,7 +171,36 @@ const Head = styled.header`
   }
 `;
 
-export default function Header() {
+const ThemeToggle = styled.button`
+  background: transparent;
+  border: none;
+  color: ${(props) => props.theme.text};
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  margin-left: 0.5rem;
+
+  &:hover {
+    color: ${(props) => props.theme.pink};
+    background: ${(props) => props.theme.glassBgHover};
+    transform: scale(1.1);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+`;
+
+interface HeaderProps {
+  toggleTheme: () => void;
+  isDark: boolean;
+}
+
+export default function Header({ toggleTheme, isDark }: HeaderProps) {
   return (
     <Head>
       <div className="header-bg"></div>
@@ -182,6 +213,11 @@ export default function Header() {
           <li><NavLink to='/projects'>Projects</NavLink></li>
           <li><NavLink to='/about'>About</NavLink></li>
           <li><NavLink to='/contact'>Contact</NavLink></li>
+          <li>
+            <ThemeToggle onClick={toggleTheme} aria-label="Toggle theme">
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            </ThemeToggle>
+          </li>
         </ul>
       </nav>
     </Head>
